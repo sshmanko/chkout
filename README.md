@@ -7,7 +7,7 @@ Prerequisites:
 - Route53 DNS Managed zone
 - GitHub user and [Personal Access Token](https://github.com/settings/tokens/new)
 
-# Setup steps
+Setup steps:
 1. `terraform init`
 2. `terraform apply -var github_user="<user>" -var github_token="<token>" -var dns_zone="<zone>"`
 3. Add a webhook to GitHub repository: [Howto](https://www.runatlantis.io/docs/configuring-webhooks.html#github-github-enterprise)
@@ -17,10 +17,12 @@ Prerequisites:
 
    `aws ssm get-parameters --name '/atlantis/webhook/secret' --with-decryption`
 
+# Notes
+**ecs-service-autoscaling** module was modified to include *Memory* alerts as requested.
 
-<br/><br/>
 This workflow was tested on my old repository:
 https://github.com/sshmanko/webapp/pull/1
+
 
 Atlantis URL in AWS:
 https://atlantis.aws.pingtool.org/
